@@ -1,0 +1,6 @@
+.venv
+.env
+.DS_Store
+pipeline_spec.json
+plan.json
+__pycache__

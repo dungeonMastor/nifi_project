@@ -1,0 +1,9 @@
+mcp[server-fastmcp]
+google-genai
+python-dotenv
+pydantic
+rich
+pymongo
+clickhouse-connect
+requests
+urllib3
