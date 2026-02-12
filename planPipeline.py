@@ -10,7 +10,6 @@ from rich.panel import Panel
 from rich.text import Text
 from rich.prompt import Prompt
 
-# Load environment variables
 load_dotenv()
 console = Console()
 

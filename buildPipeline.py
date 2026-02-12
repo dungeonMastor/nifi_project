@@ -142,7 +142,6 @@ def main():
             source_processor_ids.add(conn["from_id"])
 
     print("Fetching NiFi processor types...")
-    # console.print("Fetching NiFi processor types...") # Replaced with status spinner below
     with console.status("[bold green]Fetching NiFi processor types...[/bold green]", spinner="dots"):
         proc_types_map = fetch_processor_types()
     

@@ -510,8 +510,6 @@ Please provide the corrected configuration JSON with 'properties' and 'auto_term
     def resolve_scheduling_errors_with_llm(self, scheduling_config, error_message):
         if not self.gemini_api_key:
             return False
-            
-        # self.console.print(f"[yellow]--- Attempting to fix scheduling errors with LLM ({self.llm_model}) ---[/yellow]")
         
         system_prompt = """You are a NiFi expert. Your goal is to fix a Processor's scheduling configuration based on an error message.
 You will receive the current scheduling configuration and the error message returned by NiFi.
@@ -547,10 +545,6 @@ Please provide the corrected scheduling JSON object.
                     'response_mime_type': 'application/json'
                 }
             )
-            
-
-            
-            # print(f"\n[LLM RESPONSE]:\n{response.text}\n")
             
             text = response.text.strip()
             if text.startswith("```json"):
@@ -609,7 +603,6 @@ Please provide the corrected 'plan_details' JSON object.
         
         full_prompt = system_prompt + "\n" + user_prompt
         full_prompt = system_prompt + "\n" + user_prompt
-        # self.console.print(Panel(full_prompt[:500] + "...", title="LLM Prompt", style="dim"))
 
         try:
             if not self.client:
